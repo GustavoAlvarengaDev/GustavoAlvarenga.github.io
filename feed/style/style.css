@@ -1,0 +1,280 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    box-sizing: border-box;
+}
+/*--- Barra Lateral ---*/
+div.sidebar{
+    position: fixed;
+    width: 240px;
+    left: -240px;
+    height: 100%;
+    background: rgba(105, 90, 205, 0.896);
+    transition: all .5s ease;
+}
+
+header{
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto' sans-serif;
+
+    line-height: 70px;
+    width: 100%;
+    height: 50px;
+
+    user-select: none;
+    background-color: #271d6a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 1px 0 3px rgba(0,0,0,0.4);
+}
+
+div.sidebar a{
+    display: block;
+    width: 100%;
+    height: 65px;
+    color: white;
+    line-height: 65px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #271d6a;
+    border-top: 1px solid rgba(13, 13, 13, 0.1);
+    border-left: 1px solid ;
+    transition: all .5s ease;
+}
+
+a.active,a:hover{
+    border-left: 5px solid #042d3c;
+    color: #025f81;
+}
+
+.sidebar a i{
+    font-size: 23px;
+    margin-right: 16px;
+}
+
+.sidebar a span{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#check{
+    display: none;
+}
+
+label #btn,label #cancel{
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #271d6a;
+    margin: 15px 30px;
+    font-size: 28px;
+    background: #271d6a;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 45px;
+    transition: all .5s ease;
+}
+
+label #cancel{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+
+#check:checked ~ label #btn{
+    margin-left: 245px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*--- corpo do site ---*/
+body{
+    background-color: rgba(106, 90, 205, 0.2);
+    font-family: 'Roboto', sans-serif;
+
+    -webkit-font-smoothing: antialiased !important;
+}
+
+li{
+    list-style: none;
+}
+
+.main{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+div.newpost{
+    width: 100%;
+    height: 240px;
+    margin: 0px 0;
+
+    
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+
+    background: rgba(106, 90, 205, 0.2);
+    border-radius: 10px;
+    box-shadow: 1px 0 3px rgba(0,0,0,0.2);
+}
+
+div.infoUser{
+    
+    align-items: center;
+    justify-content: center;    
+}
+
+/*--- configuração foto de perfil e nome de usuário ---*/
+
+div.imgUser{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #333;  
+}
+
+strong{
+    display: flex;
+    font-size: 16px;
+    margin-left: 0;
+    
+}
+
+/*--- formulário do post ---*/
+
+form.formPost{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form.formPost textarea{
+    background-color: #fbfbfb;
+    margin: 15px 0;
+    padding: 25px;
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+    border: 0;
+
+    font-family: "roboto" sans-serif;
+    font-weight: bold;
+    color: #727272;
+}
+
+/*--- botões img, gif, video e publicar ---*/
+
+form.formPost div.iconsAndButton{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form.formPost div.iconsAndButton div.icons button{
+    outline: none;
+    background: #fff;
+    margin: 13px;
+    border: none;
+
+    cursor: pointer
+}
+
+button.btnSubmitForm{
+    background: rgba(105, 90, 205, 0.896);
+    padding: 10px 50px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s
+}
+
+button.btnSubmitForm:hover{ 
+    background: rgba(58, 49, 114, 0.896);
+
+
+}
+
+/*--- info post e usuário ---*/
+
+ul.posts li.post{
+    margin-bottom: 50px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+
+    box-shadow: 1px 0 3px rgba(0,0,0,0.05);
+}
+
+div.infoUserPost{
+    display: flex;
+    align-items: center;
+}
+
+ul.posts li.post div.infoUserPost div.imgUserPost{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(58, 49, 114, 0.896);  
+}
+
+div.nameAndHour{
+    margin-left: 10px;
+
+}
+
+div.nameAndHour >strong{
+    color: rgba(58, 49, 114, 0.896);
+}
+
+div.nameAndHour >p{
+    color: #D1D1D1;
+    font-size: 12px;
+}
+
+li.post >p{
+    width: 100%;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #727272;
+
+}
+
+div.actionButton{
+    display: flex;
+    align-items: center;
+}
+
+div.actionButton button.actionPost{
+    padding: 5px 20px;
+    border: none;
+    background: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    outline: none; 
+    font-weight: bold;
+    font-size: 16px;
+    
+    border-radius: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
